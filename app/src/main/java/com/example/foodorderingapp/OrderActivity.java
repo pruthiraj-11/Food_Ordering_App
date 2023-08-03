@@ -3,7 +3,9 @@ package com.example.foodorderingapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.foodorderingapp.Adapters.MainAdapter;
 import com.example.foodorderingapp.Adapters.OrdersAdapter;
@@ -20,18 +22,21 @@ public class OrderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        binding= ActivityOrderBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
+        binding= ActivityOrderBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         ArrayList<OrdersModel> list=new ArrayList<>();
-        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
-        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
-        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
-        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
-        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
-        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
-        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
+        DBHelper dbHelper=new DBHelper(this);
+        list=dbHelper.getOrders();
+
+//        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
+//        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
+//        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
+//        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
+//        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
+//        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
+//        list.add(new OrdersModel(R.drawable.mushroom,"Mushroom","4","7467"));
 
         OrdersAdapter ordersAdapter =new OrdersAdapter(list,this);
         binding.orderRecyclerView.setAdapter(ordersAdapter);

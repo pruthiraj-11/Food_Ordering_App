@@ -82,7 +82,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="9dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
             android:text="Meaty portobello mushroom for the vegeterian burger" />
 
         <EditText
@@ -92,9 +93,10 @@
             android:layout_marginBottom="13dp"
             android:background="@drawable/textbackground"
             android:ems="10"
+            android:hint="Enter your name"
             android:inputType="textPersonName"
-            android:padding="9dp"
-            android:text="Sanamti Dash" />
+            android:minHeight="48dp"
+            android:padding="9dp" />
 
         <EditText
             android:id="@+id/userphone"
@@ -102,9 +104,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/textbackground"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:padding="9dp"
-            android:text="Phone" />
+            android:hint="Phone"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:padding="9dp" />
 
         <TextView
             android:id="@+id/textView8"
@@ -149,7 +152,9 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/btnbackground"
             android:text="ORDER NOW"
-            android:textColor="#0B0A0A" />
+            android:textColor="#0B0A0A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
